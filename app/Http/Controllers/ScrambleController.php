@@ -13,7 +13,7 @@ class ScrambleController extends Controller
         $user = User::first();
 
         return response()->json([
-            'data' => ScrambleIndexDTO::fromModel($user)
+            'data' => ScrambleIndexDTO::fromModel($user)->include('email', 'settings')
         ]);
     }
 }
