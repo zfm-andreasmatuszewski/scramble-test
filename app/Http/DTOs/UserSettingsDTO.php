@@ -18,7 +18,7 @@ class UserSettingsDTO extends Data
     {
         return new self(
             sidebar_collapsed: $settings->sidebar_collapsed,
-            email_notifications_activated: $settings->email_notifications_activated,
+            email_notifications_activated: Lazy::create($settings->email_notifications_activated),
         );
     }
 }
