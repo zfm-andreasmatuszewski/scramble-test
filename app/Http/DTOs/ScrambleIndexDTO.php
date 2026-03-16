@@ -23,8 +23,8 @@ class ScrambleIndexDTO extends Data
         return new self(
             $user->name,
             $user->email,
-            Lazy::whenLoaded('settings', $user, fn() => UserSettingsDTO::fromModel($user->settings)),
-            Lazy::whenLoaded('contacts', $user, fn() => $user->contacts->map(fn($contact) => ContactDataDTO::fromModel($contact))),
+            Lazy::create(fn() => UserSettingsDTO::fromModel($user->settings)),
+            Lazy::create(fn() => $user->contacts->map(fn($contact) => ContactDataDTO::fromModel($contact))),
         );
     }
 }

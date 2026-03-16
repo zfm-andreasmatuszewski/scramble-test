@@ -15,9 +15,7 @@ class ContactDataDTO extends Data
         public string $last_name,
         public ?string $email,
         #[DataCollectionOf(AddressDTO::class)]
-        public Collection $addresses,
-        #[DataCollectionOf(ContactDataDTO::class)]
-        public Lazy|Collection $contacts,
+        public Lazy|Collection $addresses,
     ) {}
 
     public static function fromModel(Contact $contact): self
@@ -26,8 +24,7 @@ class ContactDataDTO extends Data
             $contact->first_name,
             $contact->last_name,
             $contact->email,
-            $contact->addresses,
-            Lazy::whenLoaded('contacts', $contact, fn() => $contact->contacts->map(fn($related_contact) => ContactDataDTO::fromModel($related_contact)))
+            Lazy::create(fn() => $contact->addresses),
         );
     }
 }
