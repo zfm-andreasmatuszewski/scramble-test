@@ -4,12 +4,13 @@ namespace App\Http\DTOs;
 
 use App\Models\UserSetting;
 use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Lazy;
 
 class UserSettingsDTO extends Data
 {
     public function __construct(
         public bool $sidebar_collapsed,
-        public bool $email_notifications_activated,
+        public Lazy|bool $email_notifications_activated,
     ) {
     }
 
