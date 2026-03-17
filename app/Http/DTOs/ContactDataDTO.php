@@ -24,7 +24,7 @@ class ContactDataDTO extends Data
             $contact->first_name,
             $contact->last_name,
             $contact->email,
-            Lazy::create(fn() => $contact->addresses),
+            Lazy::create(fn() => $contact->addresses->map(fn($address) => AddressDTO::fromModel($address))),
         );
     }
 }
