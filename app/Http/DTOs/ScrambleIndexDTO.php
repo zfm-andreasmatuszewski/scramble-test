@@ -24,7 +24,7 @@ class ScrambleIndexDTO extends Data
             $user->name,
             $user->email,
             Lazy::create(fn() => UserSettingsDTO::fromModel($user->settings)),
-            Lazy::create(fn() => $user->contacts->map(fn($contact) => ContactDataDTO::fromModel($contact))),
+            Lazy::create(fn() => $user->contacts->map(fn($contact) => ContactDataDTO::fromModel($contact))->include('addresses')),
         );
     }
 }

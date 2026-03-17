@@ -4,13 +4,14 @@ namespace App\Http\DTOs;
 
 use App\Models\Address;
 use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Lazy;
 
 class AddressDTO extends Data
 {
     public function __construct(
         public string $street,
         public string $city,
-        public string $country,
+        public Lazy|string $country,
     ) {}
 
     public static function fromModel(Address $address): self
@@ -18,7 +19,7 @@ class AddressDTO extends Data
         return new self(
             $address->street,
             $address->city,
-            $address->country,
+            Lazy::create(fn() => $address->country),
         );
     }
 }
