@@ -10,10 +10,10 @@ class ScrambleController extends Controller
 {
     public function index(): JsonResponse
     {
-        $users = User::paginate();
+        $users = User::when(true, fn($query) => $query)->paginate();
 
         return response()->json([
-            'data' => ScrambleIndexDTO::collect($users),
+            'data' => ScrambleIndexDTO::collect($users)->through(fn(ScrambleIndexDTO $dto) => $dto->include('contacts')),
         ]);
     }
 }
