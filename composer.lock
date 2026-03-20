@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cca5133c5ee777a2d357763611d056c1",
+    "content-hash": "42c691f432663b8967ae1ff4dff4fe98",
     "packages": [
         {
             "name": "brick/math",
@@ -137,16 +137,16 @@
         },
         {
             "name": "dedoc/scramble",
-            "version": "v0.13.15",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dedoc/scramble.git",
-                "reference": "8101fb042c178fa8506740380b8067d571951a2c"
+                "reference": "d3993b487fa88688945ab54602ead1412988a136"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dedoc/scramble/zipball/8101fb042c178fa8506740380b8067d571951a2c",
-                "reference": "8101fb042c178fa8506740380b8067d571951a2c",
+                "url": "https://api.github.com/repos/dedoc/scramble/zipball/d3993b487fa88688945ab54602ead1412988a136",
+                "reference": "d3993b487fa88688945ab54602ead1412988a136",
                 "shasum": ""
             },
             "require": {
@@ -171,6 +171,7 @@
                 "spatie/laravel-permission": "^6.10|^7.2",
                 "spatie/pest-plugin-snapshots": "^2.1"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -205,7 +206,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dedoc/scramble/issues",
-                "source": "https://github.com/dedoc/scramble/tree/v0.13.15"
+                "source": "https://github.com/dedoc/scramble/tree/main"
             },
             "funding": [
                 {
@@ -213,24 +214,24 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-12T13:16:40+00:00"
+            "time": "2026-03-19T11:52:30+00:00"
         },
         {
             "name": "dedoc/scramble-pro",
-            "version": "v0.8.11",
+            "version": "v0.8.12",
             "source": {
                 "type": "git",
                 "url": "git@github.com:dedoc/scramble-pro.git",
-                "reference": "f428ccd0dd71be15aeb7a8cf81580f2370adee1b"
+                "reference": "10125349f6102e8809bb723e26c9bb254f6bc99d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.dedoc.co/dist/dedoc/scramble-pro/dedoc-scramble-pro-f428ccd0dd71be15aeb7a8cf81580f2370adee1b-zip-7a2043.zip",
-                "reference": "f428ccd0dd71be15aeb7a8cf81580f2370adee1b",
-                "shasum": "c23d79a9436c752fac73879da6c20e9df8e92d11"
+                "url": "https://satis.dedoc.co/dist/dedoc/scramble-pro/dedoc-scramble-pro-10125349f6102e8809bb723e26c9bb254f6bc99d-zip-9ba596.zip",
+                "reference": "10125349f6102e8809bb723e26c9bb254f6bc99d",
+                "shasum": "563ff043960fb65c99fe5bc340534e7b9e951c20"
             },
             "require": {
-                "dedoc/scramble": "^v0.13.15|dev-main",
+                "dedoc/scramble": "^v0.13.16|dev-main",
                 "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
                 "php": "^8.1",
                 "spatie/laravel-package-tools": "^1.16"
@@ -325,7 +326,7 @@
                 "scramble-pro"
             ],
             "support": {
-                "source": "https://github.com/dedoc/scramble-pro/tree/v0.8.11",
+                "source": "https://github.com/dedoc/scramble-pro/tree/v0.8.12",
                 "issues": "https://github.com/dedoc/scramble-pro/issues"
             },
             "funding": [
@@ -334,7 +335,7 @@
                     "url": "https://github.com/de:doc"
                 }
             ],
-            "time": "2026-03-16T20:07:56+00:00"
+            "time": "2026-03-17T21:44:41+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -9337,7 +9338,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "dedoc/scramble": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
